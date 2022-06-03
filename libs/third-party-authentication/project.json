@@ -1,0 +1,33 @@
+{
+  "root": "libs/third-party-authentication",
+  "sourceRoot": "libs/third-party-authentication/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/third-party-authentication",
+        "main": "libs/third-party-authentication/src/index.ts",
+        "tsConfig": "libs/third-party-authentication/tsconfig.lib.json",
+        "assets": ["libs/third-party-authentication/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/third-party-authentication/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/third-party-authentication"],
+      "options": {
+        "jestConfig": "libs/third-party-authentication/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
